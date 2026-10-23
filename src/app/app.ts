@@ -1,12 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Chat } from './components/chat';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
-  templateUrl: './app.html',
+  templateUrl: 'app.html',
+  imports: [Chat],
 })
 export class App {
-  protected readonly title = signal('angular-chat');
 }

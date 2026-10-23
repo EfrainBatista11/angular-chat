@@ -1,0 +1,39 @@
+<div class="card m-4">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            @if (!connected) {
+            <li class="nav item">
+                <button class="button btn btn-success" type="button" (click)="connect()">Conectar</button>
+            </li>
+            }
+
+            @if (connected) {
+            <li class="nav item">
+                <button class="button btn btn-warning" type="button" (click)="deconnect()">Desconectar</button>
+            </li>
+            }
+
+        </ul>
+    </div>
+    <div class="card-body" style="overflow-y: scroll; height: 360px;">
+
+    </div>
+    @if (connected) {
+    <div class="card-footer">
+        <form (ngSubmit)="onSendMessage()">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" name="text" [(ngModel)]="message.text">
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+
+            </div>
+        </form>
+
+
+    </div>
+    }
+
+</div>
